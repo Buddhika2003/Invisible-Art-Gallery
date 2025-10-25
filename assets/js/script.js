@@ -1,0 +1,1 @@
+console.log("Invisible Art Gallery Script Loaded");

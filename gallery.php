@@ -3,6 +3,7 @@
 <main class="wrap">
     <h2>Gallery</h2>
     <div class="gallery-grid"> 
+       
         <?php
             $dir =__DIR__. '/assets/images';
             $files = array_diff(scandir($dir), ['.','..']);

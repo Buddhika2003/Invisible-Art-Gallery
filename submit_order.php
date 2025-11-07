@@ -33,4 +33,24 @@ finfo_close($finfo);
 if (!in_array($mime, $allowed)) {
     die('Only JPG, PNG, WEBP allowed.');
 }
+
+$ext = pathinfo($photo['name'], PATHINFO_EXTENSION);
+$base = bin2hex(random_bytes(8));
+$filename = $base . '.' . $ext;
+$target = $uploadDir . $filename;
+
+if (!move_uploaded_file($photo['tmp_name'], $target)) {
+    die('Failed to move uploaded file.');
+}
+
+
+$photo_path = 'assets/images/uploads/' . $filename;
+
+
+$stmt = $pdo->prepare("INSERT INTO orders (customer_name, email, photo_path, size, style, notes) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->execute([$customer_name, $email, $photo_path, $size, $style, $notes]);
+
+
+header('Location: order_success.php');
+exit;
 ?>

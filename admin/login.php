@@ -1,3 +1,23 @@
+<?php
+    require_once "config.php";
+
+    $err = '';
+
+    if($DB_HOST['REQUEST_METHOD'] == 'POST'){
+        $email = $_POST['email'] ??'';
+        $pass = $_POST['password']??'';
+
+        if($email ==ADMIN_USER && password_verify($pass,$ADMIN_PASS_HASH)){
+            $_SESSION['admin_logged_in']  = true;
+            header('Location:dashboard.php');
+            exit;
+        }else{
+            $err = "Invalid Credential";
+        }
+
+    }
+    
+?>
 <!DOCTYPE html>
 <html>
     <head><title>Admin Login</title></head>

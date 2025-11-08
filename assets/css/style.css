@@ -31,6 +31,8 @@ body{
     align-items: center;
 }
 
+
+
 .logo{
     font-weight: 800;
     color: #111;
@@ -42,6 +44,7 @@ nav a{
     color: #111;
     text-decoration: none;
 }
+
 
 .hero{
     padding:30px;
@@ -61,6 +64,7 @@ nav a{
     color:#111;
     border: 1px solid #111 ;
 }
+
 
 .features{
     display: grid;

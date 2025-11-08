@@ -8,7 +8,7 @@
         request has been received successfully. We will
          contact you shortly with further details.</p>
 
-         <a href ="index.php" class="btn">Return to Home</a>
+         <a href ="index.php" class="btn outline">Return to Home</a>
 </main>
 
 <?php

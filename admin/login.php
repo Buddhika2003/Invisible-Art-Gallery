@@ -10,6 +10,7 @@
         if($email ==ADMIN_USER && password_verify($pass,$ADMIN_PASS_HASH)){
             $_SESSION['admin_logged_in']  = true;
             header('Location:dashboard.php');
+<<<<<<< HEAD
             exit;
         }else{
             $err = "Invalid Credential";
@@ -17,6 +18,11 @@
 
     }
     
+=======
+
+        }
+    }
+>>>>>>> 267d2a8 (admin dashboard updated and add logout.php to securely end user session and redirect to login)
 ?>
 <!DOCTYPE html>
 <html>
